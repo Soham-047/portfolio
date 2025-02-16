@@ -289,3 +289,46 @@
 	});		
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const counterBars = document.querySelectorAll(".counter-bar-fill");
+
+    counterBars.forEach((bar) => {
+        const targetPercent = parseInt(bar.getAttribute("data-percent"));
+        const counterText = bar.parentElement.querySelector(".counter-text");
+        let currentPercent = 0;
+
+        const interval = setInterval(() => {
+            if (currentPercent >= targetPercent) {
+                clearInterval(interval);
+            } else {
+                currentPercent++;
+                bar.style.width = `${currentPercent}%`;
+                counterText.textContent = `${currentPercent}%`;
+            }
+        }, 20); // Adjust speed by changing the interval time
+    });
+});
+function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+function toggleDropdown1() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}
+function toggleDropdown2() {
+  document.getElementById("myDropdown2").classList.toggle("show");
+}
+function toggleDropdown3() {
+  document.getElementById("myDropdown3").classList.toggle("show");
+}
+
+document.getElementById('clickableElement').addEventListener('click', function () {
+    // Add the 'blast' class to trigger the animation
+    this.classList.add('blast');
+
+    // Hide the pokeball and show new content after 3 seconds
+    setTimeout(() => {
+        this.style.display = 'none'; // Hide the pokeball
+        document.getElementById('hiddenContent').style.display = 'block'; // Show new content
+    }, 1800); // Match the duration of the animation
+});

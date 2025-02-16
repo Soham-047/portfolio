@@ -22,6 +22,9 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/vendor.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap');
+		</style>
 
 	<!-- script
    ================================================== -->
@@ -31,7 +34,7 @@
 </head>
 
 <body id="top">
-
+			
 
 	<!-- intro section
    ================================================== -->
@@ -59,14 +62,14 @@
 		</div> <!-- /intro-content -->
 
 		<ul class="intro-social">
-			<a href="https://www.linkedin.com/in/soham00/" style="margin-right: 7px;" target="_blank">
+			<a href="https://github.com/Soham-047" style="margin-right: 7px;" target="_blank">
 				<svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="white" class="bi bi-github"
 					viewBox="0 0 16 16">
 					<path
 						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
 				</svg>
 			</a>
-			<a href="https://github.com/Soham-047" style="margin-left: 7px;" target="_blank">
+			<a href="https://www.linkedin.com/in/soham00/" style="margin-left: 7px;" target="_blank">
 				<svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="white" class="bi bi-linkedin"
 					viewBox="0 0 16 16">
 					<path
@@ -94,8 +97,8 @@
 
 					<p class="lead">I am Soham Raj Chopra, a student at IIIT Bhagalpur with a deep passion for
 						competitive programming and web development. I thrive on solving challenging problems and am
-						always eager to improve my skills in both coding and web technologies. My enthusiasm drives me
-						to stay updated with the latest trends</p>
+						always eager to improve my skills in both coding and web technologies. The enthusiasm drives me
+						to stay updated with the latest trends and tools.</p>
 				</div>
 
 			</div>
@@ -122,17 +125,40 @@
 						<strong>Field of Interest:</strong>
 						<span>Frontend Developer, Backend Developer, Competitive Programmer</span>
 					</li>
-					<li>
-						<strong>Projects:(click on heading to open)</strong><br>
+					<span>
+						<strong>Some of my Projects: <br>(click on heading to open)</strong><br>
 						<span style="margin-bottom: 10px;"><a
 								href="https://vervevista.onrender.com/" target="_blank">1). Blogging Website <img src="Blog.png" alt="Blog img" class="projimage"></a></span>
-								<p>This blog website features Google Sign-In for secure user authentication and supports full post management, allowing users to create, read, update, and delete posts. Built with Django for the backend and HTML, CSS, and JavaScript for the frontend, it ensures a seamless and interactive user experience.</p>
+								<div class="dropdown">
+									<button onclick="toggleDropdown()" class="dropdown-btn">Blogging Website</button>
+									<div id="myDropdown" class="dropdown-content">
+									<p>This blog website features Google Sign-In for secure user authentication and supports full post management, allowing users to create, read, update, and delete posts. Built with Django for the backend and HTML, CSS, and JavaScript for the frontend, it ensures a seamless and interactive user experience.</p>
+									</div>
+								</div> <br>
 						<span><a href="https://github.com/Soham-047/TodoCpp" target="_blank">2). ToDo App <img src="ToDo.png" alt="ToDo img" class="projimage"></a></span>
+						<div class="dropdown">
+							<button onclick="toggleDropdown1()" class="dropdown-btn">To-DO App</button>
+							<div id="myDropdown1" class="dropdown-content">
+							
 								<p>This To-Do app, built in C++, is a simple console-based program designed for quick and efficient task management. It allows users to add, view, update, and delete tasks within a session. Users can input task descriptions, due dates, and priority levels, and then manage their tasks through an intuitive menu-driven interface. All operations are performed in-memory, meaning that the tasks exist only for the duration of the program's runtime. Once the app is closed, the task list is cleared, making it a lightweight tool ideal for temporary or session-based task management.</p>
+							</div>
+						</div>	<br>	
 						<span><a href="https://sohamm.pythonanywhere.com/" target="_blank">3). Weather Website <img src="Weather.png" alt="Weather img" class="projimage"></a></span>
+						<div class="dropdown">
+							<button onclick="toggleDropdown2()" class="dropdown-btn">Weather App</button>
+							<div id="myDropdown2" class="dropdown-content">
+							
 								<p>This weather website provides real-time weather information by fetching data from an external API. Users can view current weather conditions and forecasts for various locations. The site is built with Django for the backend, handling API requests and data processing, while the frontend uses HTML, CSS, and JavaScript for a responsive and user-friendly interface.</p>
+							</div>
+						</div>	<br>
 						<span><a href="https://github.com/Soham-047/TicTac" target="_blank">4). Tic-Tac-Toe <img src="Tic-Tac.png" alt="TicTac img" class="projimage"></a></span>
+						<div class="dropdown">
+							<button onclick="toggleDropdown3()" class="dropdown-btn">Tic-Tac-Toe Game</button>
+							<div id="myDropdown3" class="dropdown-content">
+							
 								<p>This Tic-Tac-Toe game in C++ is a two-player, console-based application where players alternately place their marks (X or O) on a 3x3 grid. The goal is for one player to align three of their marks in a row, column, or diagonal to win the game. The game dynamically updates and displays the board after each move, ensuring players can only place their marks on empty cells. It checks for a win or a draw after each turn, making the experience interactive and competitive. The game continues until a winner is determined or the grid is filled, resulting in a draw.</p>			
+							</div>
+						</div>	
 					</li>
 
 				</ul>
@@ -145,7 +171,7 @@
 				<p>I'm a skilled web developer with expertise in both front-end and back-end technologies. I'm
 					proficient in HTML, CSS, and JavaScript, and have built robust and scalable web
 					applications using Python, Django, and Django REST framework. I'm also familiar with popular tools
-					and libraries such as Bootstrap, Gunicorn, Git, GitHub and Neon Databases. With a strong foundation in web
+					and libraries such as Bootstrap, Gunicorn, Postman, Docker, Microsoft Azure, Git, GitHub and Neon Databases. With a strong foundation in tools
 					development, I'm well-equipped to design, build, and deploy dynamic and responsive web applications.
 				</p>
 
@@ -177,6 +203,20 @@
 					</li>
 
 				</ul> <!-- /skill-bars -->
+				
+						
+				<div class="container">
+					<h1>Projects Done</h1>
+					<p>(Click on the ball!!)</p>
+					<div class="pokeball" id="clickableElement"></div>
+					<div id="hiddenContent" style="display: none;">
+						<div class="lld" style="margin-left: 40px;"></div>
+						<h2 id="project-cnt" style=" margin-left: 70px; color: black;">
+							9  </h2>
+					</div>
+				</div>
+
+				
 
 				Competitive-Programming Platforms:
 
@@ -192,9 +232,10 @@
 
 		<div class="row button-section">
 			<div class="col-twelve">
-				<a href="Soham_Resume.pdf" title="View CV" class="button button-primary" target="_blank">My Resume</a>
+				<a href="Resume_Soham.pdf" title="View CV" class="button button-primary" target="_blank">My Resume</a>
 			</div>
 		</div>
+
 
 	</section> <!-- /process-->
 

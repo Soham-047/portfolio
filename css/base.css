@@ -216,6 +216,39 @@ fieldset {
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
+.projimage
+{
+	border-radius: 20px;
+	padding: 5px;
+}
+.counter-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.counter-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4caf50;
+    width: 0; /* Start with 0% width */
+    transition: width 2s ease-in-out; /* Smooth animation */
+}
+
+.counter-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
 
 legend {
 	border: 0;
@@ -642,6 +675,57 @@ textarea {
 .block-1-2 .bgrid {
 	width: 50%;
 }
+.dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-btn {
+	color: #4CAF50;
+	/* background-color: #4CAF50;
+	color: white; */
+	/* padding: 1px 10px 1px 10px; */
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	height: 25px;
+	border-end-end-radius: 50px;
+	border-top-left-radius: 40px;
+	padding-bottom: 50px;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 170%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px;
+	z-index: 1;
+	border-radius: 4px;
+	margin-top: 5px;
+  }
+  
+  .show {
+	display: block;
+  }
+
+  #loadin{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color: gray;
+	color: white;
+	opacity: 1;
+	transition: 0.5s;
+	visibility: visible;
+  }
+  #loadin.hidden{
+	opacity: 0;
+	visibility: hidden;
+  }
 
 /**
  * Clearing for block grid columns. Allow columns with 
@@ -869,3 +953,217 @@ textarea {
 }
 
 /*# sourceMappingURL=base.css.map */
+
+.pokeball {
+	display: inline-block;
+	margin: 20px;
+	width: 100px;
+	height: 100px;
+	background: #b71c1c;
+	border-radius: 50%;
+	box-shadow:  inset 0 -72px 0 -37px #fff, inset 0 -76px 0 -35px #000, 0 0 0 5px #000;
+	position: relative;
+	transition: .4s;
+	transform-origin: bottom center;
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+	&:before {
+	  display: block;
+	  content: "";
+	  position: absolute;
+	  width: 100%;
+	  height: 20px;
+	  width: 20px;
+	  border-radius: 50%;
+	  background: #fff;
+	  top: 50px;
+	  left: 40px;
+	  border: 1px solid rgba(0,0,0,.4);
+	  box-shadow: 2px 0 0 0 rgba(0,0,0,0.2), 0 0 0 5px #fff, 0 0 0 10px #000;
+	}
+	
+	&:after {
+	  display: block;
+	  content: "";
+	  position: absolute;
+	  width: 100%;
+	  height:100%;
+	  border-radius: 50%;
+	  box-shadow:  inset -7px 0 5px 0 rgba(0,0,0,.4);
+	}
+	
+	&:hover {
+	  cursor: pointer;
+	  animation: anti-wiggle 1s ease-in-out;
+	}
+	
+	&:hover:after {
+	  animation: wiggle 1s ease-in-out;
+	}
+	
+	&:focus, &:active {
+	  outline: 0;
+	}
+  
+  }
+  /* Sprinkles Animation */
+.pokeball.blast::before,
+.pokeball.blast::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 0, 0, 0.8); /* Red sprinkle */
+    border-radius: 50%;
+    animation: sprinkleBlast 3s ease-in-out forwards;
+}
+
+.pokeball.blast::after {
+    background: rgba(0, 255, 0, 0.8); /* Green sprinkle */
+    animation-delay: 0.5s; /* Offset for variety */
+}
+
+/* Sprinkle Animation */
+@keyframes sprinkleBlast {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(3) rotate(360deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+  
+  @keyframes wiggle {
+	20% {
+	  box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+	  transform: rotate(7deg);
+	}
+	
+	40% {
+	  box-shadow:  inset -11px 0 5px 0 rgba(0,0,0,.4);
+	  transform: rotate(-14deg);
+	}
+	
+	60% {
+	  box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+	  transform: rotate(4deg);
+	}
+	
+	80% {
+	  box-shadow:  inset -8px 0 5px 0 rgba(0,0,0,.4);
+	  transform: rotate(-2deg);
+	}
+	
+	100% {
+	  box-shadow:  inset -7px 0 5px 0 rgba(0,0,0,.4);
+	  transform: rotate(0deg);
+	}
+  }
+  
+  @keyframes anti-wiggle {
+	20% {
+	  transform: translateX(4px) rotate(-7deg);
+	}
+	
+	40% {
+	  transform: translateX(-8px)  rotate(14deg);
+	}
+	
+	60% {
+	  transform: translateX(2px)  rotate(-4deg);
+	}
+	
+	80% {
+	  transform: translateX(-1px)  rotate(2deg);
+	}
+	
+	100% {
+	  transform: translateX(0px) rotate(0deg);
+	}
+  }
+  @keyframes blastEffect {
+    0% {
+        transform: scale(1); /* Start at normal size */
+        opacity: 1; /* Fully visible */
+    }
+    20% {
+        transform: scale(1.2); /* Expand to twice the size */
+        opacity: 0.7; /* Fade slightly */
+    }
+    40% {
+        transform: scale(1.4); /* Expand to twice the size */
+        opacity: 0.7; /* Fade slightly */
+    }
+    60% {
+        transform: scale(1.6); /* Expand to twice the size */
+        opacity: 0.7; /* Fade slightly */
+    }
+    80% {
+        transform: scale(1.8); /* Expand to twice the size */
+        opacity: 0.7; /* Fade slightly */
+    }
+	90% {
+		transform: scale(2); /* Expand to twice the size */
+        opacity: 0.8; /* Slightly faded */
+        box-shadow: 
+            0 0 20px 10px rgba(255, 0, 0, 0.8), /* Red sprinkle */
+            0 0 20px 10px rgba(0, 255, 0, 0.8), /* Green sprinkle */
+            0 0 20px 10px rgba(0, 0, 255, 0.8), /* Blue sprinkle */
+            0 0 20px 10px rgba(255, 255, 0, 0.8), /* Yellow sprinkle */
+            0 0 20px 10px rgba(255, 0, 255, 0.8);
+	}
+    100% {
+        transform: scale(0); /* Shrink to nothing */
+        opacity: 0; /* Fully invisible */
+    }
+}
+
+.blast {
+    animation: blastEffect 3s ease-in-out forwards;
+}
+/* Add a class to trigger the blast animation */
+
+#project-cnt 
+{
+	font: bolder;
+	position: relative;
+	bottom: 63px;
+	left: 13px;
+	font-family: "Jacquarda Bastarda 9", serif;
+	text-decoration: bolder;
+	text-size-adjust:inherit;
+}
+
+/* HTML: <div class="loader"></div> */
+.lld {
+	width: 100px;
+	aspect-ratio: 1;
+	--c:no-repeat radial-gradient(farthest-side,#514b82 92%,#0000);
+	background: 
+	  var(--c) 50%  0, 
+	  var(--c) 50%  100%, 
+	  var(--c) 100% 50%, 
+	  var(--c) 0    50%;
+	background-size: 10px 10px;
+	animation: l18 1s infinite;
+	position: relative;
+  }
+  .lld::before {    
+	content:"";
+	position: absolute;
+	inset:0;
+	margin: 3px;
+	background: repeating-conic-gradient(#0000 0 35deg,#514b82 0 90deg);
+	-webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 3px),#000 0);
+	border-radius: 50%;
+  }
+  @keyframes l18 { 
+	100%{transform: rotate(.5turn)}
+  }
