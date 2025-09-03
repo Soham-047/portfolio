@@ -205,22 +205,34 @@
 				</ul> <!-- /skill-bars -->
 				
 						
-				<div class="container">
-					<h1>Projects Done</h1>
-					<p>(Click on the ball!!)</p>
-					<div class="pokeball" id="clickableElement"></div>
-					<div id="hiddenContent" style="display: none;">
-						<div class="lld" style="margin-left: 40px;"></div>
-						<h2 id="project-cnt" style=" margin-left: 70px; color: black;">
-							9+ </h2>
-					</div>
-				</div>
-				<hr>
-				<div class="problems">
-					<h1>DSA Total Problems Solved</h1>
-					<p><b>500+</b> going</p>
+<section id="achievements">
+	<div class="container">
+		<h1>Achievements</h1>
+		<p>(Click on the ball!!)</p>
+		<div class="pokeball" id="clickableElement"></div>
 
-				</div><hr>
+		<!-- Hidden wrapper for both sections -->
+		<div id="hiddenContent" style="display: none;">
+
+			<!-- Projects Section -->
+			<div class="projects">
+				<h2>GitHub Stats</h2>
+				<h3 id="repo-count" style="margin-left: 70px; color: black;">Loading...</h3>
+				<p id="contrib-stats" style="margin-left: 70px; color: gray;">Fetching contributions...</p>
+			</div>
+			<hr>
+
+			<!-- Problems Section -->
+			<div class="problems">
+				<h2>DSA Total Problems Solved</h2>
+				<p><b>500+</b> going</p>
+			</div>
+			<hr>
+		</div>
+	</div>
+</section>
+
+<hr>
 				
 
 				Competitive-Programming Platforms:
@@ -253,7 +265,6 @@
 	<script src="js/jquery-2.1.3.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
 
 </html>

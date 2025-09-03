@@ -332,3 +332,35 @@ document.getElementById('clickableElement').addEventListener('click', function (
         document.getElementById('hiddenContent').style.display = 'block'; // Show new content
     }, 1800); // Match the duration of the animation
 });
+
+document.getElementById("clickableElement").addEventListener("click", function () {
+		let content = document.getElementById("hiddenContent");
+		if (content.style.display === "none") {
+			content.style.display = "block";
+
+			// Fetch GitHub data only when opened
+			fetchGitHubStats("Soham-047"); // <-- replace with your GitHub username
+		} else {
+			content.style.display = "none";
+		}
+	});
+
+	function fetchGitHubStats(username="Soham-047") {
+		// Fetch total public repos
+		fetch(`https://api.github.com/users/${username}`)
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById("repo-count").textContent = `Repositories: ${data.public_repos}+`;
+			});
+
+		// Fetch contributions (using GitHub API v3 or external service)
+		fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
+			.then(response => response.json())
+			.then(data => {
+				let total = data.totalContributions || 0;
+				document.getElementById("contrib-stats").textContent = `Total Contributions: ${total}+`;
+			})
+			.catch(() => {
+				document.getElementById("contrib-stats").textContent = "Contributions: Not Available";
+			});
+	}

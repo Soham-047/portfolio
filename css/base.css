@@ -1167,3 +1167,36 @@ textarea {
   @keyframes l18 { 
 	100%{transform: rotate(.5turn)}
   }
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global transition for interactive elements */
+a, button, img, .card {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover glow for buttons & links */
+a:hover, button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Images/cards hover scale */
+img:hover, .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* Section fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
