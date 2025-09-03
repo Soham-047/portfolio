@@ -364,3 +364,42 @@ document.getElementById("clickableElement").addEventListener("click", function (
 				document.getElementById("contrib-stats").textContent = "Contributions: Not Available";
 			});
 	}
+
+	function fetchPortfolioProjects(username) {
+		fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=8`)
+			.then(response => response.json())
+			.then(repos => {
+				let projectsList = document.getElementById("github-projects");
+				projectsList.innerHTML = "";
+
+				repos.forEach((repo, index) => {
+					let li = document.createElement("li");
+					li.style.marginBottom = "20px";
+
+					li.innerHTML = `
+						<a href="${repo.html_url}" target="_blank">
+							${index + 1}). ${repo.name}
+						</a>
+						<div class="dropdown">
+							<button onclick="toggleDropdown(${index})" class="dropdown-btn">${repo.name}</button>
+							<div id="dropdown-${index}" class="dropdown-content">
+								<p>${repo.description || "No description available."}</p>
+							</div>
+						</div>
+					`;
+					projectsList.appendChild(li);
+				});
+			})
+			.catch(err => {
+				document.getElementById("github-projects").innerHTML = "<li>Error fetching repos.</li>";
+			});
+	}
+
+	// Dropdown toggle
+	function toggleDropdown(id) {
+		let dropdown = document.getElementById(`dropdown-${id}`);
+		dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+	}
+
+	// Call with your GitHub username
+	fetchPortfolioProjects("Soham-047");

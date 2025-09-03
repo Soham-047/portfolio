@@ -675,36 +675,6 @@ textarea {
 .block-1-2 .bgrid {
 	width: 50%;
 }
-.dropdown {
-	position: relative;
-	display: inline-block;
-  }
-  
-  .dropdown-btn {
-	color: #4CAF50;
-	/* background-color: #4CAF50;
-	color: white; */
-	/* padding: 1px 10px 1px 10px; */
-	border: none;
-	cursor: pointer;
-	border-radius: 10px;
-	height: 25px;
-	border-end-end-radius: 50px;
-	border-top-left-radius: 40px;
-	padding-bottom: 50px;
-  }
-  
-  .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	width: 170%;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px;
-	z-index: 1;
-	border-radius: 4px;
-	margin-top: 5px;
-  }
   
   .show {
 	display: block;
@@ -1200,3 +1170,75 @@ img:hover, .card:hover {
   transform: translateY(0);
 }
 
+.projects-section {
+  margin-top: 30px;
+}
+
+.projects-section strong {
+  font-size: 18px;
+  color: #222;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#github-projects li {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9f9f9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  list-style-type: none;
+}
+
+#github-projects li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+#github-projects a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+#github-projects a:hover {
+  color: #005fa3;
+}
+
+/* Dropdown button */
+.dropdown-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 15px;
+  color: #333;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
